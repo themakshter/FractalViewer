@@ -22,7 +22,7 @@ import java.io.*;
  */
 public class FractalGUI {
 	public static void main(String[] args) {
-		FractalViewerFrame fvf = new FractalViewerFrame();
+		new FractalViewerFrame();
 	}
 }
 
@@ -33,6 +33,10 @@ public class FractalGUI {
  * 
  */
 class FractalViewerFrame extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private SpringLayout layout;
 
 	/**
@@ -75,6 +79,10 @@ class FractalViewerFrame extends JFrame {
  */
 
 abstract class Calculations extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected int itrCount, imgWidth, imgHeight;
 	protected boolean red, cyan;
 	protected int maxIterations = 100;
@@ -94,6 +102,10 @@ abstract class Calculations extends JPanel {
  * 
  */
 class FractalPanel extends Calculations {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField realAxisMinVal, realAxisMaxVal, imagAxisMinVal,
 			imagAxisMaxVal, no_of_iterations;
 	private JLabel point;
@@ -792,6 +804,10 @@ class FractalPanel extends Calculations {
  * 
  */
 class JuliaPanel extends Calculations {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Complex userSelectedPoint = new Complex(0, 0);
 	private JButton save, open;
 	private BufferedImage bfim;
@@ -1153,6 +1169,10 @@ class JuliaPanel extends Calculations {
  * 
  */
 class DrawingPanel extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private BufferedImage img;
 
 	/**
