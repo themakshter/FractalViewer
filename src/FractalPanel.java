@@ -652,7 +652,7 @@ public class FractalPanel extends Calculations {
 		public void mouseReleased(MouseEvent e) {
 			// only performs this code if the user had been dragging the mouse
 			// over the image, trying to create the rectangle.
-			if (dragging) {
+			if (dragging && inPanel) { // don't zoom in if we went out of panel
 				// gets the x and y coordinates of the mouse when it is released
 				// and scales them according to the axes and creates the
 				// corresponding Complex
