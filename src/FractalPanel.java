@@ -592,7 +592,7 @@ public class FractalPanel extends Calculations {
 	 * 
 	 */
 	class PointDetector implements MouseListener, MouseMotionListener {
-		private Complex init, fin;
+		private Complex init;
 
 		/**
 		 * Displays the corresponding Julia Set to the point clicked in the
@@ -660,7 +660,7 @@ public class FractalPanel extends Calculations {
 								// the mouse when it is released
 				y2 = e.getY(); // gets the Y coordinate of the final position of
 								// the mouse when it is released
-				fin = scaleNumber(x2, y2);
+				Complex fin = scaleNumber(x2, y2);
 				// of the initial coordinates and the final ones, the bigger of
 				// the two are chosen as the maximum real and imaginary values.
 				// The same formula is applied to get the minimum ones. The new
