@@ -35,9 +35,8 @@ public class Complex {
 	 * @return The Complex after it has been squared.
 	 */
 	public Complex square() {
-		double sqReal = getRealPart() * getRealPart() - getImaginaryPart()
-				* getImaginaryPart();
-		double sqImaginary = 2 * (getRealPart() * getImaginaryPart());
+		double sqReal = (real * real) - (imaginary * imaginary);
+		double sqImaginary = 2 * real * imaginary;
 		return new Complex(sqReal, sqImaginary);
 	}
 
@@ -47,8 +46,7 @@ public class Complex {
 	 * @return The value of the square of the modulus of the Complex
 	 */
 	public double modulusSquared() {
-		return getRealPart() * getRealPart() + getImaginaryPart()
-				* getImaginaryPart();
+		return (real * real) + (imaginary * imaginary);
 	}
 
 	/**
@@ -60,9 +58,7 @@ public class Complex {
 	 * @return The final resulting Complex from the addition of the two.
 	 */
 	public Complex add(Complex d) {
-		double real = getRealPart() + d.getRealPart();
-		double imaginary = getImaginaryPart() + d.getImaginaryPart();
-		return new Complex(real, imaginary);
+		return new Complex(real + d.getRealPart(), imaginary + d.getImaginaryPart());
 	}
 
 	/**
@@ -72,11 +68,7 @@ public class Complex {
 	 * @return The positive value of the real part of the Complex.
 	 */
 	public double getPosReal() {
-		if (real < 0) { // it first checks if the value is positive or not
-			return -real; // makes it positive if it isn't
-		} else {
-			return real; // returns it unchanged if it was already positive
-		}
+	    return (real < 0) ? -real : real;
 	}
 
 	/**
@@ -85,8 +77,7 @@ public class Complex {
 	 * @return  The conjugate of the Complex.
 	 */
 	public Complex getConjugate() {
-		imaginary = -imaginary;
-		return new Complex(real, imaginary);
+		return new Complex(real, -imaginary);
 	}
 
 	/**
@@ -96,12 +87,7 @@ public class Complex {
 	 * @return  The positive value of the imaginary part of the Complex.
 	 */
 	public double getPosImag() {
-		if (imaginary < 0) { // it first checks if the value is positive or not
-			imaginary = -imaginary; // makes it positive if it isn't
-			return imaginary;
-		} else {
-			return imaginary; // returns it unchanged if it was already positive
-		}
+	    return (imaginary < 0) ? -imaginary : imaginary;
 	}
 
 	/**
