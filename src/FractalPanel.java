@@ -61,7 +61,7 @@ public class FractalPanel extends Calculations {
 	 */
 	public FractalPanel(JuliaPanel jp) {
 		imgWidth = 400;
-		imgHeight = 400;
+		imgHeight = 350;
 		this.jp = jp;
 		layout = new SpringLayout();
 		this.setLayout(layout);
@@ -268,7 +268,7 @@ public class FractalPanel extends Calculations {
 	public void addImage() {
 		BufferedImage bufim = makeImage();
 		dp = new DrawingPanel(bufim);
-		dp.setPreferredSize(new Dimension(400, 350));
+		dp.setPreferredSize(new Dimension(imgWidth, imgHeight));
 		this.add(dp);
 		layout.putConstraint("North", dp, 0, "North", this);
 		layout.putConstraint("East", dp, 0, "East", this);
