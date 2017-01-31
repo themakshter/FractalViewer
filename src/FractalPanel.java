@@ -668,10 +668,8 @@ public class FractalPanel extends Calculations {
 				// on the text fields
 				maxReal = Math.max(init.getRealPart(), fin.getRealPart());
 				minReal = Math.min(init.getRealPart(), fin.getRealPart());
-				maxImag = Math.max(init.getImaginaryPart(),
-						fin.getImaginaryPart());
-				minImag = Math.min(init.getImaginaryPart(),
-						fin.getImaginaryPart());
+				maxImag = Math.max(init.getImaginaryPart(),	fin.getImaginaryPart());
+				minImag = Math.min(init.getImaginaryPart(),	fin.getImaginaryPart());
 				realAxisMaxVal.setText(String.valueOf(maxReal));
 				realAxisMinVal.setText(String.valueOf(minReal));
 				imagAxisMaxVal.setText(String.valueOf(maxImag));
@@ -702,19 +700,17 @@ public class FractalPanel extends Calculations {
 		public void mouseMoved(MouseEvent e) {
 			// this code is only executed if the Live Updating check box is
 			// ticked
-			if (live) {
+			if (live && !clicking) {
 				// this is done only if the user hasn't clicked to display an
 				// image yet
-				if (!clicking) {
-					// as the mouse moves, the Julia Set is updated to its
-					// current point
-					int real = e.getX();
-					int imag = e.getY();
-					moved = scaleNumber(real, imag);
-					point.setText(moved.toString());
-					jp.showJuliaSet(moved, maxIterations, fractal, scheme);
-					jSetShowing = true;
-				}
+				// as the mouse moves, the Julia Set is updated to its
+				// current point
+				int real = e.getX();
+				int imag = e.getY();
+				moved = scaleNumber(real, imag);
+				point.setText(moved.toString());
+				jp.showJuliaSet(moved, maxIterations, fractal, scheme);
+				jSetShowing = true;
 			}
 		}
 
